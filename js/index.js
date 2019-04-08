@@ -57,7 +57,14 @@ const footer = document.querySelector('footer');
 ////////////end of variables
 
 
-
+//nav stylings
+navItems[0].innerHTML = "Services";
+navItems[1].innerHTML = "Product";
+navItems[2].innerHTML = "Vision";
+navItems[3].innerHTML = "Features";
+navItems[4].innerHTML = "About";
+navItems[5].innerHTML = "Contact";
+headerImg.setAttribute('src', "img/logo.png");
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
