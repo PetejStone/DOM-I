@@ -38,7 +38,8 @@ const siteContent = {
 };
 
 ///////Beginning of variables
-const navItems = document.querySelectorAll('nav a');
+const nav = document.querySelector('nav');
+const navItems = Array.from(nav.children);
 const headerImg = document.querySelector('header img');
 const mainHeading = document.querySelector('.cta h1');
 const headingButton = document.querySelector('.cta button');
@@ -54,6 +55,7 @@ const contactAddress = document.querySelector('.contact').children[1];
 const contactPhone = document.querySelector('.contact').children[2];
 const contactEmail = document.querySelector('.contact').children[3];
 const footerContent = document.querySelector('footer p');
+
 ////////////end of variables
 
 
@@ -64,7 +66,18 @@ navItems[2].innerHTML = "Vision";
 navItems[3].innerHTML = "Features";
 navItems[4].innerHTML = "About";
 navItems[5].innerHTML = "Contact";
+const blog = document.createElement('a');
+blog.innerHTML = 'Blog';
+blog.style.color = 'green';
+const home = document.createElement('a');
+home.innerHTML = 'Home';
+home.style.color = 'green'
+nav.appendChild(blog);
+nav.prepend(home);
 headerImg.setAttribute('src', "img/logo.png");
+navItems.forEach(item => item.style.color = 'green');
+
+
 ////
 
 //cta content
@@ -112,6 +125,13 @@ contactEmail.innerHTML = "sales@greatidea.io";
 
 //footer
 footerContent.innerHTML = "Copyright Great Idea! 2018";
+//
+
+//stretch goal -- update content -- button text will change when clicked
+
+headingButton.addEventListener('click', ()=> {
+  headingButton.innerHTML = 'You Have Started!';
+});
 //
 
 // Example: Update the img src for the logo
