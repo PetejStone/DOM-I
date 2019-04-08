@@ -80,6 +80,7 @@ if (tens.innerHTML >= 1) {
 }
 });
 
+//
 // reset.addEventListener('click', ()=>{
 //   tens.style.color = 'black';
 //   ones.style.color = 'black';
