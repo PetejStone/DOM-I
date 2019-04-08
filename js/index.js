@@ -50,7 +50,7 @@ const services = document.querySelector('.bottom-content').children[0];
 const product = document.querySelector('.bottom-content').children[1];
 const vision = document.querySelector('.bottom-content').children[2];
 const contact = document.querySelector('.contact');
-const contactAddess = document.querySelector('.contact').children[1];
+const contactAddress = document.querySelector('.contact').children[1];
 const contactPhone = document.querySelector('.contact').children[2];
 const contactEmail = document.querySelector('.contact').children[3];
 const footer = document.querySelector('footer');
@@ -102,6 +102,13 @@ product.children[1].innerHTML = "Product content elementum magna eros, ac posuer
 vision.children[0].innerHTML = "Vision"
 vision.children[1].innerHTML = "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
 ////
+
+//contact content
+contact.children[0].innerHTML = 'Contact';
+contactAddress.innerHTML = "123 Way 456 Street Somewhere, USA";
+contactPhone.innerHTML = "1 (888) 888-8888";
+contactEmail.innerHTML = "sales@greatidea.io";
+//
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
