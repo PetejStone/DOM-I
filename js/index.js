@@ -37,6 +37,28 @@ const siteContent = {
   },
 };
 
+///////Beginning of variables
+const navItems = document.querySelectorAll('nav a');
+const headerImg = document.querySelector('header img');
+const mainHeading = document.querySelector('.cta h1');
+const headingButton = document.querySelector('.cta button');
+const headingImage = document.querySelector('.cta img');
+const features = document.querySelector('.top-content').children[0];
+const about = document.querySelector('.top-content').children[1];
+const middleImg = document.querySelector('#middle-img');
+const services = document.querySelector('.bottom-content').children[0];
+const product = document.querySelector('.bottom-content').children[1];
+const vision = document.querySelector('.bottom-content').children[2];
+const contact = document.querySelector('.contact');
+const contactAddess = document.querySelector('.contact').children[1];
+const contactPhone = document.querySelector('.contact').children[2];
+const contactEmail = document.querySelector('.contact').children[3];
+const footer = document.querySelector('footer');
+////////////end of variables
+
+
+
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
