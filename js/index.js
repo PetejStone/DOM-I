@@ -53,7 +53,7 @@ const contact = document.querySelector('.contact');
 const contactAddress = document.querySelector('.contact').children[1];
 const contactPhone = document.querySelector('.contact').children[2];
 const contactEmail = document.querySelector('.contact').children[3];
-const footer = document.querySelector('footer');
+const footerContent = document.querySelector('footer p');
 ////////////end of variables
 
 
@@ -108,6 +108,10 @@ contact.children[0].innerHTML = 'Contact';
 contactAddress.innerHTML = "123 Way 456 Street Somewhere, USA";
 contactPhone.innerHTML = "1 (888) 888-8888";
 contactEmail.innerHTML = "sales@greatidea.io";
+//
+
+//footer
+footerContent.innerHTML = "Copyright Great Idea! 2018";
 //
 
 // Example: Update the img src for the logo
