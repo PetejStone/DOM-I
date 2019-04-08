@@ -4,10 +4,11 @@ const ones = document.querySelector('#secondOnes');
 const msTens = document.querySelector('#msTens');
 const msHundreds = document.querySelector('#msHundreds');
 const start = document.querySelector('#start');
-
+const reset = document.querySelector('#reset');
+const colon = document.querySelector('#colon');
 // let stopwatch = setInterval(function(){
 //   number += .01; console.log(number) }, 10);
-
+reset.disabled = 'true';
 start.addEventListener('click', ()=> {
   let counter = 0;
 
@@ -25,49 +26,66 @@ start.addEventListener('click', ()=> {
 /////Tens content
 
   let tenCounter = setInterval(function(){
-     if(tens.innerHTML <= 8) {
+     if(tens.innerHTML <= 8 && counter === 0) {
        tens.innerHTML = tenVariable += 1;
-     } else if (tens.innerHTML = 8){
-       tenVariable = 0;
-       tens.innerHTML = 0;
+       counter += 1;
+       tens.style.color = 'red';
+       ones.style.color = 'red';
+       msTens.style.color = 'red';
+       msHundreds.style.color = 'red';
+       colon.style.color = 'red';
+       reset.disabled = false;
+     } else if (tens.innerHTML >= 1){
+
+
   }}, 10000);
 //////
 
-//// Ones Content
-  let oneCounter = setInterval(function(){
-     if(ones.innerHTML <= 8) {
-       ones.innerHTML = oneVariable += 1;
-     } else if (ones.innerHTML = 8){
-       oneVariable = 0;
-       ones.innerHTML = 0;
 
-  }}, 1000);
-//////////
 
-///decimal tens content
+      ///ones content
+      let oneCounter = setInterval(function(){
+         if(ones.innerHTML <= 8 && tens.innerHTML < 1) {
+           ones.innerHTML = oneVariable += 1;
+         } else if (ones.innerHTML = 8){
+           oneVariable = 0;
+           ones.innerHTML = 0;
 
-  let msTensCounter = setInterval(function(){
-     if(msTens.innerHTML <= 8) {
-       msTens.innerHTML = msTenVariable += 1;
-     } else if (msTens.innerHTML = 8){
-       msTenVariable = 0;
-       msTens.innerHTML = 0;
-  }}, 100);
-/////////
+      }}, 1000);
+    //////////
 
-///decimal hundreds content
-  let msHundredsCounter = setInterval(function(){
-     if(msHundreds.innerHTML <= 8) {
-       msHundreds.innerHTML = msHundredVariable += 1;
-     } else if (msHundreds.innerHTML = 8) {
-       msHundredVariable = 0;
-       msHundreds.innerHTML = 0;
-     }}, 10 );
+    ///decimal tens content
+
+      let msTensCounter = setInterval(function(){
+         if(msTens.innerHTML <= 8 && tens.innerHTML < 1) {
+           msTens.innerHTML = msTenVariable += 1;
+         } else if (msTens.innerHTML = 8){
+           msTenVariable = 0;
+           msTens.innerHTML = 0;
+      }}, 100);
+    /////////
+
+    ///decimal hundreds content
+      let msHundredsCounter = setInterval(function(){
+         if(msHundreds.innerHTML <= 8 && tens.innerHTML < 1) {
+           msHundreds.innerHTML = msHundredVariable += 1;
+         } else if (msHundreds.innerHTML = 8) {
+           msHundredVariable = 0;
+           msHundreds.innerHTML = 0;
+         }}, 10 );
 
 ////////
-
-
-
-
-
+if (tens.innerHTML >= 1) {
+  tens.style.color = 'red';
+}
 });
+
+// reset.addEventListener('click', ()=>{
+//   tens.style.color = 'black';
+//   ones.style.color = 'black';
+//   msTens.style.color = 'black';
+//   msHundreds.style.color = 'black';
+//   colon.style.color = 'black';
+//   tens.innerHTML = 0;
+//
+// });
