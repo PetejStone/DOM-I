@@ -57,7 +57,7 @@ const footer = document.querySelector('footer');
 ////////////end of variables
 
 
-//nav stylings
+//nav content
 navItems[0].innerHTML = "Services";
 navItems[1].innerHTML = "Product";
 navItems[2].innerHTML = "Vision";
@@ -67,22 +67,41 @@ navItems[5].innerHTML = "Contact";
 headerImg.setAttribute('src', "img/logo.png");
 ////
 
-//cta stylings
+//cta content
 mainHeading.innerHTML = "DOM Is Awesome!"
 headingImg.setAttribute('src', "img/header-img.png");
 headingButton.innerHTML = "Get Started";
 ////
 
-///features stylings
+///features content
 features.children[0].innerHTML = "Features";
 features.children[1].innerHTML = "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
 /////
 
-///about stylings
+///about content
 about.children[0].innerHTML = "About";
 about.children[1].innerHTML = "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis";
 /////
 
+//middle img
+middleImg.setAttribute('src', "img/mid-page-accent.jpg" );
+///
+
+//services content
+services.children[0].innerHTML = "Services"
+services.children[1].innerHTML = "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+////
+
+///Product content
+product.children[0].innerHTML = "Product"
+product.children[1].innerHTML = "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+
+////
+
+///vision content
+vision.children[0].innerHTML = "Vision"
+vision.children[1].innerHTML = "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+////
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
