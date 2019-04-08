@@ -42,7 +42,7 @@ const navItems = document.querySelectorAll('nav a');
 const headerImg = document.querySelector('header img');
 const mainHeading = document.querySelector('.cta h1');
 const headingButton = document.querySelector('.cta button');
-const headingImage = document.querySelector('.cta img');
+const headingImg = document.querySelector('.cta img');
 const features = document.querySelector('.top-content').children[0];
 const about = document.querySelector('.top-content').children[1];
 const middleImg = document.querySelector('#middle-img');
@@ -65,6 +65,24 @@ navItems[3].innerHTML = "Features";
 navItems[4].innerHTML = "About";
 navItems[5].innerHTML = "Contact";
 headerImg.setAttribute('src', "img/logo.png");
+////
+
+//cta stylings
+mainHeading.innerHTML = "DOM Is Awesome!"
+headingImg.setAttribute('src', "img/header-img.png");
+headingButton.innerHTML = "Get Started";
+////
+
+///features stylings
+features.children[0].innerHTML = "Features";
+features.children[1].innerHTML = "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+/////
+
+///about stylings
+about.children[0].innerHTML = "About";
+about.children[1].innerHTML = "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis";
+/////
+
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
