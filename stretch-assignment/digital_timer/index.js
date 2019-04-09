@@ -9,13 +9,17 @@ const colon = document.querySelector('#colon');
 // let stopwatch = setInterval(function(){
 //   number += .01; console.log(number) }, 10);
 reset.disabled = 'true';
-start.addEventListener('click', ()=> {
-  let counter = 0;
+let timerOff = true;
 
+
+start.addEventListener('click',   ()=> {
+  let counter = 0;
   let tenVariable = 0;
   let oneVariable = 0;
   let msTenVariable = 0;
   let msHundredVariable = 0;
+
+  timerOff = false;
 
   start.disabled = true;
   tens.innerHTML = 0;
@@ -24,7 +28,7 @@ start.addEventListener('click', ()=> {
   msHundreds.innerHTML = 0;
 
 /////Tens content
-
+if (reset.disabled === true && timerOff === false) {
   let tenCounter = setInterval(function(){
      if(tens.innerHTML <= 8 && counter === 0) {
        tens.innerHTML = tenVariable += 1;
@@ -35,6 +39,8 @@ start.addEventListener('click', ()=> {
        msHundreds.style.color = 'red';
        colon.style.color = 'red';
        reset.disabled = false;
+       timerOff = true;
+
      } else if (tens.innerHTML >= 1){
 
 
@@ -45,7 +51,7 @@ start.addEventListener('click', ()=> {
 
       ///ones content
       let oneCounter = setInterval(function(){
-         if(ones.innerHTML <= 8 && tens.innerHTML < 1) {
+         if(ones.innerHTML <= 8 && tens.innerHTML < 1 && timerOff === false) {
            ones.innerHTML = oneVariable += 1;
          } else if (ones.innerHTML = 8){
            oneVariable = 0;
@@ -57,7 +63,7 @@ start.addEventListener('click', ()=> {
     ///decimal tens content
 
       let msTensCounter = setInterval(function(){
-         if(msTens.innerHTML <= 8 && tens.innerHTML < 1) {
+         if(msTens.innerHTML <= 8 && tens.innerHTML < 1 && timerOff === false) {
            msTens.innerHTML = msTenVariable += 1;
          } else if (msTens.innerHTML = 8){
            msTenVariable = 0;
@@ -67,26 +73,26 @@ start.addEventListener('click', ()=> {
 
     ///decimal hundreds content
       let msHundredsCounter = setInterval(function(){
-         if(msHundreds.innerHTML <= 8 && tens.innerHTML < 1) {
+         if(msHundreds.innerHTML <= 8 && tens.innerHTML < 1 && timerOff === false) {
            msHundreds.innerHTML = msHundredVariable += 1;
-         } else if (msHundreds.innerHTML = 8) {
+         } else if (msHundreds.innerHTML = 8 ) {
            msHundredVariable = 0;
            msHundreds.innerHTML = 0;
          }}, 10 );
 
 ////////
-if (tens.innerHTML >= 1) {
-  tens.style.color = 'red';
+
 }
 });
 
-//
-// reset.addEventListener('click', ()=>{
-//   tens.style.color = 'black';
-//   ones.style.color = 'black';
-//   msTens.style.color = 'black';
-//   msHundreds.style.color = 'black';
-//   colon.style.color = 'black';
-//   tens.innerHTML = 0;
-//
-// });
+reset.addEventListener('click', ()=>{
+  tens.style.color = 'black';
+  ones.style.color = 'black';
+  msTens.style.color = 'black';
+  msHundreds.style.color = 'black';
+  colon.style.color = 'black';
+  tens.innerHTML = 0;
+  reset.disabled = true;
+  start.disabled = false;
+
+});
