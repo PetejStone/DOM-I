@@ -12,15 +12,15 @@ const colon = document.querySelector('#colon');
 reset.disabled = 'true';
 let timerOff = true;
 
-
+///timer function for event listener
 const timer = function(){
-  let counter = 0;
+  let timerOn = true;
   let tenVariable = 0;
   let oneVariable = 0;
   let msTenVariable = 0;
   let msHundredVariable = 0;
 
-  timerOff = false;
+
 
   start.disabled = true;
   tens.innerHTML = 0;
@@ -29,11 +29,11 @@ const timer = function(){
   msHundreds.innerHTML = 0;
 
 /////Tens content
-if (reset.disabled === true && timerOff === false) {
+if (reset.disabled === true) {
   let tenCounter = setInterval(function(){
-     if(tens.innerHTML <= 8 && counter === 0) {
+     if(tens.innerHTML <= 8 && timerOn === true) {
        tens.innerHTML = tenVariable += 1;
-       counter += 1;
+       timerOn = false;
        tens.style.color = 'red';
        ones.style.color = 'red';
        msTens.style.color = 'red';
@@ -51,7 +51,7 @@ if (reset.disabled === true && timerOff === false) {
 
       ///ones content
       let oneCounter = setInterval(function(){
-         if(ones.innerHTML <= 8 && tens.innerHTML < 1 && timerOff === false) {
+         if(ones.innerHTML <= 8 && tens.innerHTML < 1) {
            ones.innerHTML = oneVariable += 1;
          } else if (ones.innerHTML = 8){
            oneVariable = 0;
@@ -63,7 +63,7 @@ if (reset.disabled === true && timerOff === false) {
     ///decimal tens content
 
       let msTensCounter = setInterval(function(){
-         if(msTens.innerHTML <= 8 && tens.innerHTML < 1 && timerOff === false) {
+         if(msTens.innerHTML <= 8 && tens.innerHTML < 1 ) {
            msTens.innerHTML = msTenVariable += 1;
          } else if (msTens.innerHTML = 8){
            msTenVariable = 0;
@@ -73,7 +73,7 @@ if (reset.disabled === true && timerOff === false) {
 
     ///decimal hundreds content
       let msHundredsCounter = setInterval(function(){
-         if(msHundreds.innerHTML <= 8 && tens.innerHTML < 1 && timerOff === false) {
+         if(msHundreds.innerHTML <= 8 && tens.innerHTML < 1 ) {
            msHundreds.innerHTML = msHundredVariable += 1;
          } else if (msHundreds.innerHTML = 8 ) {
            msHundredVariable = 0;
@@ -90,7 +90,7 @@ reset.addEventListener('click', ()=>{
   tens.innerHTML = 0;
   reset.disabled = true;
   start.disabled = false;
-  counter = 0;
+  timerOn = false;
   clearInterval(msTensCounter);
   clearInterval(oneCounter);
   clearInterval(msHundredsCounter);
