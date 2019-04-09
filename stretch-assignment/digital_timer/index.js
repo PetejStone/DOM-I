@@ -6,13 +6,14 @@ const msHundreds = document.querySelector('#msHundreds');
 const start = document.querySelector('#start');
 const reset = document.querySelector('#reset');
 const colon = document.querySelector('#colon');
+
 // let stopwatch = setInterval(function(){
 //   number += .01; console.log(number) }, 10);
 reset.disabled = 'true';
 let timerOff = true;
 
 
-start.addEventListener('click',   ()=> {
+const timer = function(){
   let counter = 0;
   let tenVariable = 0;
   let oneVariable = 0;
@@ -40,7 +41,6 @@ if (reset.disabled === true && timerOff === false) {
        colon.style.color = 'red';
        reset.disabled = false;
        timerOff = true;
-
      } else if (tens.innerHTML >= 1){
 
 
@@ -81,10 +81,6 @@ if (reset.disabled === true && timerOff === false) {
          }}, 10 );
 
 ////////
-
-}
-});
-
 reset.addEventListener('click', ()=>{
   tens.style.color = 'black';
   ones.style.color = 'black';
@@ -94,5 +90,14 @@ reset.addEventListener('click', ()=>{
   tens.innerHTML = 0;
   reset.disabled = true;
   start.disabled = false;
-
+  counter = 0;
+  clearInterval(msTensCounter);
+  clearInterval(oneCounter);
+  clearInterval(msHundredsCounter);
+  clearInterval(tenCounter);
 });
+}
+
+}
+// });
+start.addEventListener('click',timer );
